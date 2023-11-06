@@ -18,3 +18,5 @@ This application fetches weather forecast data from the OpenWeatherMap API and d
 ## API Key
 
 The application uses an API key to authenticate requests to the OpenWeatherMap API. You can obtain your own API key by signing up on their website.
+
+## This is not a finished project and is far from usable
