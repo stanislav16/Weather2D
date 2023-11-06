@@ -5,7 +5,7 @@ let lat;
 let lon;
 
 // API Key
-let api = 'ea73d5e89224d63f1f7c52734328a954';
+let api = '77442ded850fd1a075869d12438a5415';
 
 function getCityCoords(city) {
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=&appid=${api}`)
@@ -36,25 +36,6 @@ function getWeatherForDay(lat, lon) {
         });
 }
 
-function hourlyTemperature(city){
-    fetch(`https://api.openweathermap.org/data/2.5/forecast/hourly?q=${city}&appid=${api}`)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);  // Log the data to the console
-            let hourlyForecast = data.list.slice(0, 24); // Get the forecast for the next 24 hours
-            hourlyForecast.forEach((hour, index) => {
-                let temp = Math.floor(hour.main.temp - 273.15);
-                let tempElement = document.createElement('p');
-                tempElement.innerHTML = `Hour ${index}: ${temp}°C`;
-                document.getElementById('hourly').appendChild(tempElement);
-            });
-        })
-        .catch(err => {
-            console.log(err);
-        });
-}
 // Get Weather
 function getWeatherForNextDays(city) {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api}`)
@@ -81,8 +62,7 @@ button.addEventListener('click', function() {
     city = cityEl.value;
 
     getCityCoords(city)
-         //   getWeatherForDay(lat, lon);
+         getWeatherForDay(lat, lon);
             getWeatherForNextDays(city);
-            hourlyTemperature(city);
 });
 
