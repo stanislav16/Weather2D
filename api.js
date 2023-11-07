@@ -8,14 +8,13 @@ let lon;
 let api = '77442ded850fd1a075869d12438a5415';
 
 function getCityCoords(city) {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=&appid=${api}`)
+    return fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=&appid=${api}`)
         .then(response => {
             return response.json();
         })
         .then(data => {
-             lat = data[0].lat;
-             lon = data[0].lon;
-            document.getElementById('kur').innerHTML = lat + ' ' + lon;
+            lat = data[0].lat;
+            lon = data[0].lon;
         })
         .catch(err => {
             console.log(err);
@@ -27,9 +26,8 @@ function getWeatherForDay(lat, lon) {
             return response.json();
         })
         .then(data => {
-            let temp = Math.floor(data.current.temp - 273.15);
+            let temp = Math.floor(data.hourly[0].temp - 273.15);
             document.getElementById(`temperature`).innerHTML = `${temp}°C`;
-            document.getElementById(`description`).innerHTML = data.current.clouds;
         })
         .catch(err => {
             console.log(err);
@@ -48,7 +46,6 @@ function getWeatherForNextDays(city) {
                 let temp = Math.floor(day.main.temp - 273.15);
                 document.getElementById(`temperature${index + 2}`).innerHTML = `${temp}°C`;
                 document.getElementById(`description${index + 2}`).innerHTML = day.weather[0].main;
-                let iconCode = day.weather[0].icon;
             });
         })
         .catch(err => {
@@ -56,13 +53,15 @@ function getWeatherForNextDays(city) {
         });
 }
 
-button.addEventListener('click', function() {
+button.addEventListener('click', () => {
     // Get the city from the textbox
     cityEl = document.getElementById('cityBox');
     city = cityEl.value;
 
     getCityCoords(city)
-         getWeatherForDay(lat, lon);
+        .then(() => {
+            getWeatherForDay(lat, lon);
             getWeatherForNextDays(city);
+        });
 });
 
