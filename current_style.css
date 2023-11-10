@@ -36,6 +36,7 @@ float:left;
     border:none;
     background-color:#DEDEDE;
     font-family:"Poppins-Medium";
+    color:#808080;
 }
 
 .topnav .search-container button {
@@ -48,10 +49,12 @@ float:left;
     cursor: pointer;
     border-radius:7px;
     margin-left:7px;
+    color:#808080;
 }
 
 .topnav .search-container button:hover {
     background: #ccc;
+    color:#808080;
 }
 
 .topnav .date{
@@ -68,6 +71,7 @@ float:left;
     width:30%;
     height: 100%;
     border-radius:40px;
+    //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.19);
 }
 .bigTemp{
     font-size:170px;
