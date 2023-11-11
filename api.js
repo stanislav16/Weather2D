@@ -39,6 +39,7 @@ function getWeatherForDay(lat, lon) {
             document.getElementById(`temperature`).innerHTML = `${temp}°`;
             document.getElementById(`desc`).innerHTML = data.current.weather[0].description;
             document.getElementById(`wind`).innerHTML = data.current.wind_speed + ` m/s`;
+            document.getElementById(`humidity`).innerHTML = data.current.humidity + ` %`;
         })
         .catch(err => {
             console.log(err);

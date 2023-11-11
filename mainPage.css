@@ -24,7 +24,7 @@
 
 .topnav input[type=text] {
 
-    width: 200px;
+    width: 130px;
     padding: 6px;
     font-size: 17px;
     border-radius:7px;
@@ -68,47 +68,65 @@
     /*box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.19);*/
 }
 .mainInfo{
-    position:absolute;
-    width:300px;
-    height:200px;
-    top:10%;
-    left:30%;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    width: 500px;
+    position: absolute;
+    top:14%;
+    left:21%;
+
 }
+
     .bigTemp{
-        float:left;
-        left:-50%;
-        position:absolute;
         font-size:170px;
         color:#8B8B8B;
-        text-align:right;
-        width:300px;
+        text-align: center;
+
 
     }
     .desc{
-        position:absolute;
-        float:left;
-        left:70%;
-        top:40%;
-        line-height:22px;
-        font-size:20px;
+        width: 300px;
+        position: absolute;
+        top:43%;
+        left: 26%;
+        line-height:40px;
+        font-size:40px;
         color:#8B8B8B;
+        text-transform: capitalize;
+        text-align: center;
+
+    }
+    .smallInfo{
+
+
     }
     .wind{
-        position:absolute;
-        float:left;
-        left:70%;
-        top:75%;
+        position: fixed;
+        top:36%;
         font-size:20px;
         color:#8B8B8B;
     }
+.humidity{
+    position: fixed;
+    top:32%;
+    font-size:20px;
+    color:#8B8B8B;
+}
     .windIcon{
-        position:absolute;
-        float:left;
-        left:58%;
-        top:75%;
+        position: fixed;
+        top:36%;
+        margin-left: -32px;
         color:#8B8B8B;
 
     }
+.humIcon{
+    position: fixed;
+    top:32%;
+    margin-left:-32px;
+    color:#8B8B8B;
+
+}
 
 .date{
     position: absolute;
@@ -121,19 +139,10 @@
    text-align: center;
     font-size:50px;
     color:#8B8B8B;
-    font-weight:bold;
-    margin-left: 10%;
+    margin-left: 3%;
+    text-transform: capitalize;
 
 }
-.city::first-letter{
-    text-transform:uppercase;
-}
-
-
-
-
-
-
 
 /* #8B8B8B for font color on lighter background
    #808080 for font color on darker background
