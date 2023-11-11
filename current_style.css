@@ -1,16 +1,8 @@
 @font-face { font-family: Poppins-Medium; src: url('fonts/Poppins-Medium.ttf');}
-
-body {
-    text-align: center;
-}
 .whole{
     background-color: #EAEAEA;
     font-family:"Poppins-Medium";
 }
-#weather {
-    margin-top: 50px;
-}
-
 .topnav {
     overflow: hidden;
     background-color: #EAEAEA;
@@ -70,17 +62,54 @@ float:left;
     background-color: #DEDEDE;
     width:30%;
     height: 100%;
-    border-radius:40px;
-    //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.19);
+    border-bottom-left-radius:40px;
+    border-top-left-radius:40px;
+    /*box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.19);*/
 }
-.bigTemp{
-    font-size:170px;
-    font-family:"Poppins-Medium";
-    margin-left:470px;
-    color:#808080;
+.mainInfo{
     position:absolute;
-    top:13%;
+    width:300px;
+    height:200px;
+   // background-color:red;
+    top:10%;
+    left:30%;
 }
+    .bigTemp{
+        float:left;
+        left:-50%;
+        position:absolute;
+        font-size:170px;
+        color:#808080;
+        text-align:right;
+        width:300px;
+
+    }
+    .desc{
+        position:absolute;
+        float:left;
+        left:70%;
+        top:40%;
+        line-height:22px;
+        font-size:20px;
+        color:#808080;
+    }
+    .wind{
+        position:absolute;
+        float:left;
+        left:70%;
+        top:75%;
+        font-size:20px;
+        color:#808080;
+    }
+    .windIcon{
+        position:absolute;
+        float:left;
+        left:60%;
+        top:75%;
+        font-size:50px;
+        color:#808080;
+
+    }
 
 .date{
     float:right;
@@ -90,6 +119,22 @@ float:left;
     color:#808080;
     font-size:20px;
 }
+.city{
+    float:left;
+    position:absolute;
+    right:60%;
+    top:1%;
+    font-size:50px;
+    color:#808080;
+    font-weight:bold;
+
+}
+.city::first-letter{
+    text-transform:uppercase;
+}
+
+
+
 
 /* #8B8B8B for font color on lighter background
    #808080 for font color on darker background

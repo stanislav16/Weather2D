@@ -12,6 +12,7 @@ var yyyy = today.getFullYear();
 today = mm + '/' + dd + '/' + yyyy;
 document.getElementById('date').innerHTML = today;
 
+
 // API Key
 let api = '77442ded850fd1a075869d12438a5415';
 
@@ -29,13 +30,16 @@ function getCityCoords(city) {
         });
 }
 function getWeatherForDay(lat, lon) {
-    fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${api}`)
+    fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${api}`)
         .then(response => {
             return response.json();
         })
         .then(data => {
-            let temp = Math.floor(data.hourly[0].temp - 273.15);
+            let temp = Math.floor(data.current.temp);
             document.getElementById(`temperature`).innerHTML = `${temp}°`;
+            document.getElementById(`desc`).innerHTML = data.current.weather[0].description;
+            document.getElementById(`wind`).innerHTML = data.current.wind_speed + ` m/s`;
+            document.getElementById(`cityH`).innerHTML = city;
         })
         .catch(err => {
             console.log(err);
