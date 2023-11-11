@@ -39,7 +39,6 @@ function getWeatherForDay(lat, lon) {
             document.getElementById(`temperature`).innerHTML = `${temp}°`;
             document.getElementById(`desc`).innerHTML = data.current.weather[0].description;
             document.getElementById(`wind`).innerHTML = data.current.wind_speed + ` m/s`;
-            document.getElementById(`cityH`).innerHTML = city;
         })
         .catch(err => {
             console.log(err);
@@ -57,11 +56,17 @@ button.addEventListener('click', () => {
     getCityCoords(city)
         .then(() => {
             getWeatherForDay(lat, lon);
-            getWeatherForNextDays(city);
+            document.getElementById(`cityH`).innerHTML=city;
         });
 });
 
 const cityWelcome=localStorage.getItem("cityWel");
-console.log(cityWelcome);
+
+window.onload = getCityCoords(cityWelcome)
+    .then(()=>{
+        getWeatherForDay(lat,lon);
+        document.getElementById(`cityH`).innerHTML = cityWelcome;
+
+    });
 
 

@@ -4,23 +4,26 @@
     font-family:"Poppins-Medium";
 }
 .topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    float:left;
     background-color: #EAEAEA;
     width:70%;
 
 }
 
 .topnav .search-container {
-float:left;
-    margin-left:30px;
-    position:absolute;
-    left:2%;
-    top:3%;
-
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    left: 3%;
 
 }
 
 .topnav input[type=text] {
+
     width: 200px;
     padding: 6px;
     font-size: 17px;
@@ -32,10 +35,9 @@ float:left;
 }
 
 .topnav .search-container button {
-    text-align: left;
+    text-align: center;
     padding: 6px;
-    margin-right: 16px;
-    background: #ddd;
+    background: #DEDEDE;
     font-size: 17px;
     border: none;
     cursor: pointer;
@@ -51,9 +53,8 @@ float:left;
 
 .topnav .date{
     float:right;
-
-
 }
+
 
 .right {
     position: absolute;
@@ -78,7 +79,7 @@ float:left;
         left:-50%;
         position:absolute;
         font-size:170px;
-        color:#808080;
+        color:#8B8B8B;
         text-align:right;
         width:300px;
 
@@ -90,7 +91,7 @@ float:left;
         top:40%;
         line-height:22px;
         font-size:20px;
-        color:#808080;
+        color:#8B8B8B;
     }
     .wind{
         position:absolute;
@@ -98,36 +99,38 @@ float:left;
         left:70%;
         top:75%;
         font-size:20px;
-        color:#808080;
+        color:#8B8B8B;
     }
     .windIcon{
         position:absolute;
         float:left;
         left:58%;
         top:75%;
-        color:#808080;
+        color:#8B8B8B;
 
     }
 
 .date{
+    position: absolute;
+    left:60%;
     float:right;
-    position:absolute;
-    right:35%;
-    top:4%;
     color:#808080;
     font-size:20px;
 }
 .city{
    text-align: center;
-    top:1%;
     font-size:50px;
-    color:#808080;
+    color:#8B8B8B;
     font-weight:bold;
+    margin-left: 10%;
 
 }
 .city::first-letter{
     text-transform:uppercase;
 }
+
+
+
 
 
 
