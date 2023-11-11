@@ -70,7 +70,6 @@ float:left;
     position:absolute;
     width:300px;
     height:200px;
-   // background-color:red;
     top:10%;
     left:30%;
 }
@@ -104,9 +103,8 @@ float:left;
     .windIcon{
         position:absolute;
         float:left;
-        left:60%;
+        left:58%;
         top:75%;
-        font-size:50px;
         color:#808080;
 
     }
@@ -120,9 +118,7 @@ float:left;
     font-size:20px;
 }
 .city{
-    float:left;
-    position:absolute;
-    right:60%;
+   text-align: center;
     top:1%;
     font-size:50px;
     color:#808080;

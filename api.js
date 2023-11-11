@@ -61,3 +61,7 @@ button.addEventListener('click', () => {
         });
 });
 
+const cityWelcome=localStorage.getItem("cityWel");
+console.log(cityWelcome);
+
+
