@@ -101,6 +101,9 @@ function getWeatherForDay(lat, lon) {
                 }
             }
 
+            document.getElementById(`max`).innerHTML=`H:` + Math.floor(data.daily[0].temp.max) + `°`;
+            document.getElementById(`min`).innerHTML=`L:` + Math.floor(data.daily[0].temp.min) + `°`;
+
 
         })
         .catch(err => {
