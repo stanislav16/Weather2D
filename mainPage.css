@@ -65,11 +65,10 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #DEDEDE;
     width: 30%;
     height: 100%;
-    border-bottom-left-radius: 40px;
-    border-top-left-radius: 40px;
+    border-left-style: solid;
+    border-color: #DEDEDE;
 }
 
 .mainInfo {
@@ -188,9 +187,7 @@
     margin-left: 30px;
     width: 100px;
     height: 160px;
-    border-color: #DEDEDE;
-    border-radius: 14px;
-    border-style: solid;
+
 
 }
 
@@ -209,7 +206,7 @@
 }
 
 .hourDesc {
-    margin-top: 10px;
+    margin-top: 3px;
     text-align: center;
     color: #8B8B8B;
     font-size: 16px;
@@ -218,7 +215,8 @@
 }
 
 .header {
-    margin-top: 5%;
+    margin-top: 40px;
+    margin-bottom: 30px;
     margin-left: 25%;
     font-size: 30px;
     color:#808080;
@@ -226,16 +224,17 @@
 
 .dayBox {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-    margin-top: 30px;
+    margin-bottom: 13px;
+    padding-bottom: 13px;
     margin-left: 40px;
     width: 390px;
     height: 90px;
-    border-radius: 30px;
-    border-style: solid;
-    border-color: #BBBBBB;
+    background-color: #EAEAEA;
+    border-bottom-style: solid;
+    border-color: #DEDEDE;
+
 
 }
 .dayLabel{

@@ -70,9 +70,23 @@ function getWeatherForDay(lat, lon) {
                 if (index < hourlyDesc.length) {
                     // Get the description
                     let desc = hourlyData[index].weather[0].description;
+                    if(desc.includes("rain") || desc.includes("drizzle")){
+                        document.getElementById(`hourIcon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">rainy</span>';
+                    }
+                    else if(desc.includes("thunderstorm")){
+                        document.getElementById(`hourIcon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">thunderstorm</span>';
+                    }
+                    else if(desc.includes("clear")){
+                        document.getElementById(`hourIcon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">clear_day</span>';
+                    }
+                    else if(desc.includes("few clouds") || desc.includes("scattered clouds")){
+                        document.getElementById(`hourIcon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">partly_cloudy_day</span>';
 
-                    // Add the temperature to the div
-                    document.getElementById(`hourDesc${i + 1}`).innerHTML = desc;
+                    }
+                    else if(desc.includes("broken clouds") || desc.includes("overcast clouds")){
+                        document.getElementById(`hourIcon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">cloud</span>';
+
+                    }
                 }
             }
 
@@ -155,8 +169,6 @@ function getWeatherForDay(lat, lon) {
 
                     }
 
-
-                    // Add the temperature to the div
                 }
             }
 
