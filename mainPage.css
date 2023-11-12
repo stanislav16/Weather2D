@@ -70,7 +70,6 @@
     height: 100%;
     border-bottom-left-radius: 40px;
     border-top-left-radius: 40px;
-    /*box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 .mainInfo {
@@ -135,7 +134,7 @@
 
 }
 
-.max{
+.max {
     width: 55px;
     text-align: center;
     position: fixed;
@@ -144,7 +143,8 @@
     font-size: 20px;
     color: #8B8B8B;
 }
-.min{
+
+.min {
     width: 50px;
     text-align: center;
     position: fixed;
@@ -171,7 +171,7 @@
 
 }
 
-.hourly{
+.hourly {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,24 +196,61 @@
 
 .hourLabel {
     text-align: center;
-    margin-top:10px;
+    margin-top: 10px;
     font-size: 17px;
     color: #8B8B8B;
 }
-.hourTemp{
+
+.hourTemp {
     text-align: center;
     margin-top: 5px;
-    color:#8B8B8B;
+    color: #8B8B8B;
     font-size: 40px;
 }
-.hourDesc{
+
+.hourDesc {
     margin-top: 10px;
     text-align: center;
-    color:#8B8B8B;
+    color: #8B8B8B;
     font-size: 16px;
     text-transform: capitalize;
     line-height: 17px;
 }
+
+.header {
+    margin-top: 5%;
+    margin-left: 25%;
+    font-size: 30px;
+    color:#808080;
+}
+
+.dayBox {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-left: 40px;
+    width: 390px;
+    height: 90px;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #BBBBBB;
+
+}
+.dayLabel{
+    margin-left: 20px;
+    font-size: 25px;
+    color:#808080;
+}
+.dayDesc{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    color:#808080;
+}
+
+
 
 
 /* #8B8B8B for font color on lighter background

@@ -41,6 +41,8 @@ function getWeatherForDay(lat, lon) {
             document.getElementById(`desc`).innerHTML = data.current.weather[0].description;
             document.getElementById(`wind`).innerHTML = data.current.wind_speed + ` m/s`;
             document.getElementById(`humidity`).innerHTML = data.current.humidity + ` %`;
+
+
             // Get the hourly forecast data
             let hourlyData = data.hourly;
             // Loop over the divs
@@ -101,8 +103,63 @@ function getWeatherForDay(lat, lon) {
                 }
             }
 
-            document.getElementById(`max`).innerHTML=`H:` + Math.floor(data.daily[0].temp.max) + `°`;
-            document.getElementById(`min`).innerHTML=`L:` + Math.floor(data.daily[0].temp.min) + `°`;
+
+
+            document.getElementById(`max`).innerHTML = `H:` + Math.floor(data.daily[0].temp.max) + `°`;
+            document.getElementById(`min`).innerHTML = `L:` + Math.floor(data.daily[0].temp.min) + `°`;
+
+            let dailyLabel = data.daily;
+
+            let weekdays = ['Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+            for (let i = 0; i < 5; i++) {
+                let index = i ;
+
+                if (index < dailyLabel.length) {
+                    let date = new Date(dailyLabel[index].dt * 1000); // Multiply by 1000 to convert seconds to milliseconds
+
+                    // Get the day of the week as a number
+                    let dayNumber = date.getDay();
+
+
+                    // Get the weekday name
+                    let weekdayName = weekdays[dayNumber];
+                    // Add the temperature to the div
+                    document.getElementById(`dayLabel${i + 1}`).innerHTML = weekdayName;
+                }
+            }
+
+            let dailyDesc = data.daily;
+
+            for (let i = 0; i < 5; i++) {
+                let index = i ;
+
+                if (index < dailyDesc.length) {
+                    let desc = dailyDesc[index].weather[0].description;
+
+                    if(desc.includes("rain") || desc.includes("drizzle")){
+                        document.getElementById(`icon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">rainy</span>';
+                    }
+                    else if(desc.includes("thunderstorm")){
+                        document.getElementById(`icon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">thunderstorm</span>';
+                    }
+                    else if(desc.includes("clear")){
+                        document.getElementById(`icon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">clear_day</span>';
+                    }
+                    else if(desc.includes("few clouds") || desc.includes("scattered clouds")){
+                        document.getElementById(`icon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">partly_cloudy_day</span>';
+
+                    }
+                    else if(desc.includes("broken clouds") || desc.includes("overcast clouds")){
+                        document.getElementById(`icon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">cloud</span>';
+
+                    }
+
+
+                    // Add the temperature to the div
+                }
+            }
+
 
 
         })
