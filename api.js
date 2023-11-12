@@ -87,6 +87,14 @@ function getWeatherForDay(lat, lon) {
                         document.getElementById(`hourIcon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">cloud</span>';
 
                     }
+                    else if(desc.includes("mist") || desc.includes("smoke") || desc.includes("haze") || desc.includes("whirls") || desc.includes("fog") || desc.includes("sand") || desc.includes("dust") || desc.includes("ash") || desc.includes("squalls") || desc.includes("tornado")){
+                        document.getElementById(`hourIcon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">mist</span>';
+
+                    }
+                    else if(desc.includes("snow")){
+                        document.getElementById(`hourIcon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">weather_snowy</span>';
+
+                    }
                 }
             }
 
@@ -167,6 +175,40 @@ function getWeatherForDay(lat, lon) {
                     else if(desc.includes("broken clouds") || desc.includes("overcast clouds")){
                         document.getElementById(`icon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">cloud</span>';
 
+                    }
+                    else if(desc.includes("mist") || desc.includes("smoke") || desc.includes("haze") || desc.includes("whirls") || desc.includes("fog") || desc.includes("sand") || desc.includes("dust") || desc.includes("ash") || desc.includes("squalls") || desc.includes("tornado")){
+                        document.getElementById(`icon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">mist</span>';
+
+                    }
+                    else if(desc.includes("snow")){
+                        document.getElementById(`icon${i + 1}`).innerHTML = '<span class="material-symbols-outlined" style="font-size: 50px">weather_snowy</span>';
+
+                    }
+
+                    let dailyMin = data.daily;
+
+                    for (let i = 0; i < 5; i++) {
+                        let index = i ;
+
+                        if (index < dailyMin.length) {
+                            let minTemp = Math.floor(dailyMin[index].temp.min);
+
+                            // Add the temperature to the div
+                            document.getElementById(`dayMin${i + 1}`).innerHTML = "L: " + minTemp + `°`;
+                        }
+                    }
+
+                    let dailyMax = data.daily;
+
+                    for (let i = 0; i < 5; i++) {
+                        let index = i ;
+
+                        if (index < dailyMax.length) {
+                            let maxTemp = Math.floor(dailyMax[index].temp.max);
+
+                            // Add the temperature to the div
+                            document.getElementById(`dayMax${i + 1}`).innerHTML = "H: " + maxTemp + `°`;
+                        }
                     }
 
                 }
