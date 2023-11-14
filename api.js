@@ -224,3 +224,9 @@ window.onload = getCityCoords(cityWelcome)
         document.getElementById(`cityH`).innerHTML = cityWelcome;
 
     });
+
+//Preventing the page from reloading when pressing the "Enter" button on keyboard
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Your form handling code here
+});

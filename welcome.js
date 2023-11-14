@@ -15,3 +15,9 @@ buttonW.addEventListener('click', () => {
 
 
 });
+//Preventing the page from reloading when pressing the "Enter" button on keyboard
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Your form handling code here
+});
+
