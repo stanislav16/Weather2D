@@ -6,16 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather</title>
-    <link id="theme" rel="stylesheet" type="text/css" href="mainPageLight.css">
+    <link id="theme" rel="stylesheet" type="text/css" href="mainPage.css">
     <link rel="stylesheet" href="fonts/">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <link rel="shortcut icon" type="image/x-icon" href="./icons/header_icon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="./icons/header_icon.ico"/>
 
 
 </head>
 <body class="whole light-mode">
-
+<!--This is the div for the top navigation bar with the search bar, city and date-->
 <div class="topnav">
     <div class="search-container">
         <form>
@@ -27,6 +27,7 @@
     <div class="date" id="date"></div>
 </div>
 
+<!--This is the div for the div on the right side of the screen with the 5-Day - day of week, icon and lowest and highest temperatures-->
 <div class=right>
     <div class="header">5-Day Forecast</div>
     <div class="dayBox" id="dayBox">
@@ -71,7 +72,7 @@
     </div>
 </div>
 
-
+<!--This is the div for the main centered information on screen-->
 <div class="mainInfo">
     <div>
         <div class="max" id="max">H:10</div>
@@ -86,8 +87,9 @@
     </div>
 </div>
 
+<!--This is the div for the description on the current weather-->
 <div class="desc" id="desc"></div>
-
+<!--This is the div for the hourly forecast - hours, temperatures and icons-->
 <div class="hourly">
     <div class="hourBox">
         <div class="hourLabel" id="hourLabel1"></div>

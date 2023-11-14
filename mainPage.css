@@ -8,15 +8,15 @@
     --second-color: #EAEAEA;
     --third-color: #DEDEDE;
     --forth-color: #808080;
-    --fifth-color:#ccc;
+    --fifth-color: #ccc;
 }
 
-@media(prefers-color-scheme: dark){
-    :root{
+@media (prefers-color-scheme: dark) {
+    :root {
         --first-color: #747474;
         --second-color: #151515;
         --third-color: #222222;
-        --forth-color:#747474;
+        --forth-color: #747474;
         --fifth-color: #151515;
     }
 }
@@ -186,6 +186,7 @@
     color: var(--first-color);
     text-transform: capitalize;
 }
+
 .hourly {
     display: flex;
     justify-content: center;
@@ -194,6 +195,7 @@
     top: 63%;
     left: 4%;
 }
+
 .hourBox {
     justify-content: center;
     align-items: center;
@@ -201,12 +203,14 @@
     width: 100px;
     height: 160px;
 }
+
 .hourLabel {
     text-align: center;
     margin-top: 10px;
     font-size: 17px;
     color: var(--first-color);
 }
+
 .hourTemp {
     text-align: center;
     margin-top: 5px;
@@ -269,11 +273,12 @@
     font-size: 25px;
     color: var(--first-color);
 }
-#dayBox{
 
-    border-top-style:solid;
-    border-top-color:var(--third-color);
-    padding-top:14px
+#dayBox {
+
+    border-top-style: solid;
+    border-top-color: var(--third-color);
+    padding-top: 14px
 }
 
 @media (max-width: 1280px) {
