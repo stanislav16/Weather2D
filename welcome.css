@@ -1,7 +1,29 @@
-@font-face { font-family: Poppins-Medium; src: url('fonts/Poppins-Medium.ttf');}
-.whole{
-    background-color: #EAEAEA;
-    font-family:"Poppins-Medium";
+@font-face {
+    font-family: Poppins-Medium;
+    src: url('fonts/Poppins-Medium.ttf');
+}
+
+.whole {
+    background-color: var(--second-color);
+    font-family: "Poppins-Medium";
+}
+
+:root {
+    --first-color: #8B8B8B;
+    --second-color: #EAEAEA;
+    --third-color: #DEDEDE;
+    --forth-color: #808080;
+    --fifth-color: #ccc;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --first-color: #747474;
+        --second-color: #151515;
+        --third-color: #222222;
+        --forth-color: #747474;
+        --fifth-color: #151515;
+    }
 }
 
 .center {
@@ -11,15 +33,16 @@
     height: 100vh;
 
 }
+
 .center input[type=text] {
     width: 350px;
     height: 100px;
     padding-left: 25px;
     font-size: 50px;
-    border-radius:20px;
-    border:none;
-    background-color:#DEDEDE;
-    color:#808080;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--third-color);
+    color: var(--forth-color);
 }
 
 .center button {
@@ -27,19 +50,20 @@
     width: 100px;
     height: 100px;
     padding: 6px;
-    background: #ddd;
+    background: var(--third-color);
     font-size: 30px;
     border: none;
     cursor: pointer;
-    border-radius:20px;
-    margin-left:7px;
-    color:#808080;
+    border-radius: 20px;
+    margin-left: 7px;
+    color: var(--forth-color);
 }
 
 .center button:hover {
-    background: #ccc;
-    color:#808080;
+    background: var(--fifth-color);
+    color: var(--forth-color);
 }
+
 .center input[type=text], .center button {
     vertical-align: middle;
 }

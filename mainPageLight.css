@@ -11,13 +11,16 @@
     --fifth-color:#ccc;
 }
 
-.dark-theme{
-    --first-color: #747474;
-    --second-color: #151515;
-    --third-color: #222222;
-    --forth-color:#747474;
-    --fifth-color: #151515;
+@media(prefers-color-scheme: dark){
+    :root{
+        --first-color: #747474;
+        --second-color: #151515;
+        --third-color: #222222;
+        --forth-color:#747474;
+        --fifth-color: #151515;
+    }
 }
+
 
 .whole {
     background-color: var(--second-color);
@@ -181,7 +184,6 @@
     text-align: center;
     font-size: 50px;
     color: var(--first-color);
-    margin-left: 3%;
     text-transform: capitalize;
 }
 .hourly {
@@ -274,8 +276,12 @@
     padding-top:14px
 }
 
-/*
-   #8B8B8B for font color on lighter background
-   #DEDEDE background color dark
-   #EAEAEA background color light
-*/
+@media (max-width: 1280px) {
+    .right {
+        display: none;
+    }
+
+}
+
+
+
