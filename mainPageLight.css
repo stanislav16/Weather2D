@@ -3,8 +3,24 @@
     src: url('fonts/Poppins-Medium.ttf');
 }
 
+:root {
+    --first-color: #8B8B8B;
+    --second-color: #EAEAEA;
+    --third-color: #DEDEDE;
+    --forth-color: #808080;
+    --fifth-color:#ccc;
+}
+
+.dark-theme{
+    --first-color: #747474;
+    --second-color: #151515;
+    --third-color: #222222;
+    --forth-color:#747474;
+    --fifth-color: #151515;
+}
+
 .whole {
-    background-color: #EAEAEA;
+    background-color: var(--second-color);
     font-family: "Poppins-Medium";
 }
 
@@ -14,7 +30,6 @@
     align-items: center;
     overflow: hidden;
     float: left;
-    background-color: #EAEAEA;
     width: 70%;
 
 }
@@ -34,26 +49,27 @@
     font-size: 17px;
     border-radius: 7px;
     border: none;
-    background-color: #DEDEDE;
+    background-color: var(--third-color);
     font-family: "Poppins-Medium";
-    color: #808080;
+    color: var(--forth-color);
 }
 
 .topnav .search-container button {
+    font-family: "Poppins-Medium";
     text-align: center;
-    padding: 6px;
-    background: #DEDEDE;
+    padding: 8px;
+    background: var(--third-color);
     font-size: 17px;
     border: none;
     cursor: pointer;
     border-radius: 7px;
     margin-left: 7px;
-    color: #808080;
+    color: var(--forth-color);
 }
 
 .topnav .search-container button:hover {
-    background: #ccc;
-    color: #808080;
+    background: var(--fifth-color);
+    color: var(--forth-color);
 }
 
 .topnav .date {
@@ -68,7 +84,7 @@
     width: 30%;
     height: 100%;
     border-left-style: solid;
-    border-color: #DEDEDE;
+    border-color: var(--third-color);
 }
 
 .mainInfo {
@@ -84,7 +100,7 @@
 
 .bigTemp {
     font-size: 170px;
-    color: #8B8B8B;
+    color: var(--first-color);
     text-align: center;
 
 
@@ -97,7 +113,7 @@
     left: 26%;
     line-height: 40px;
     font-size: 40px;
-    color: #8B8B8B;
+    color: var(--first-color);
     text-transform: capitalize;
     text-align: center;
 
@@ -107,21 +123,21 @@
     position: absolute;
     top: 65%;
     font-size: 20px;
-    color: #8B8B8B;
+    color: var(--first-color);
 }
 
 .humidity {
     position: absolute;
     top: 55%;
     font-size: 20px;
-    color: #8B8B8B;
+    color: var(--first-color);
 }
 
 .windIcon {
     position: absolute;
     top: 65%;
     margin-left: -32px;
-    color: #8B8B8B;
+    color: var(--first-color);
 
 }
 
@@ -129,7 +145,7 @@
     position: absolute;
     top: 55%;
     margin-left: -32px;
-    color: #8B8B8B;
+    color: var(--first-color);
 
 }
 
@@ -140,7 +156,7 @@
     top: 32%;
     margin-left: -60px;
     font-size: 20px;
-    color: #8B8B8B;
+    color: var(--first-color);
 }
 
 .min {
@@ -150,26 +166,24 @@
     top: 52%;
     margin-left: -60px;
     font-size: 20px;
-    color: #8B8B8B;
+    color: var(--first-color);
 }
 
 .date {
     position: absolute;
     left: 60%;
     float: right;
-    color: #808080;
+    color: var(--first-color);
     font-size: 20px;
 }
 
 .city {
     text-align: center;
     font-size: 50px;
-    color: #8B8B8B;
+    color: var(--first-color);
     margin-left: 3%;
     text-transform: capitalize;
-
 }
-
 .hourly {
     display: flex;
     justify-content: center;
@@ -177,38 +191,31 @@
     position: absolute;
     top: 63%;
     left: 4%;
-
-
 }
-
 .hourBox {
     justify-content: center;
     align-items: center;
     margin-left: 30px;
     width: 100px;
     height: 160px;
-
-
 }
-
 .hourLabel {
     text-align: center;
     margin-top: 10px;
     font-size: 17px;
-    color: #8B8B8B;
+    color: var(--first-color);
 }
-
 .hourTemp {
     text-align: center;
     margin-top: 5px;
-    color: #8B8B8B;
+    color: var(--first-color);
     font-size: 40px;
 }
 
 .hourDesc {
     margin-top: 3px;
     text-align: center;
-    color: #8B8B8B;
+    color: var(--first-color);
     font-size: 16px;
     text-transform: capitalize;
     line-height: 17px;
@@ -219,7 +226,7 @@
     margin-bottom: 30px;
     margin-left: 16%;
     font-size: 40px;
-    color:#808080;
+    color: var(--first-color);
 }
 
 .dayBox {
@@ -231,39 +238,44 @@
     margin-left: 34px;
     width: 390px;
     height: 90px;
-    background-color: #EAEAEA;
+    background-color: var(--second-color);
     border-bottom-style: solid;
-    border-color: #DEDEDE;
-
-
+    border-color: var(--third-color);
 }
-.dayLabel{
+
+.dayLabel {
     margin-left: 20px;
     font-size: 25px;
-    color:#808080;
+    color: var(--first-color);
 }
-.dayDesc{
+
+.dayDesc {
     width: 50px;
     height: 50px;
     margin-left: 20px;
-    color:#808080;
+    color: var(--first-color);
 }
 
-.dayMin{
+.dayMin {
     margin-left: 20px;
     font-size: 25px;
-    color:#808080;
+    color: var(--first-color);
 }
 
-.dayMax{
+.dayMax {
     margin-left: 20px;
     font-size: 25px;
-    color:#808080;
+    color: var(--first-color);
+}
+#dayBox{
+
+    border-top-style:solid;
+    border-top-color:var(--third-color);
+    padding-top:14px
 }
 
 /*
- #8B8B8B for font color on lighter background
-   #808080 for font color on darker background
+   #8B8B8B for font color on lighter background
    #DEDEDE background color dark
    #EAEAEA background color light
 */
