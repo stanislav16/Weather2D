@@ -134,9 +134,11 @@ function getWeatherForDay(lat, lon) {
                     // Getting the day of the week as a number
                     let dayNumber = date.getDay();
 
+                    let nextDayNumber = (dayNumber + 1) % 7;
+
 
                     // Getting the weekday name
-                    let weekdayName = weekdays[dayNumber];
+                    let weekdayName = weekdays[nextDayNumber];
                     // Adding the names to the divs
                     document.getElementById(`dayLabel${i + 1}`).innerHTML = weekdayName;
                 }
