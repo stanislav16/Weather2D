@@ -172,7 +172,7 @@ function getWeatherForDay(lat, lon) {
                     }
 
                     for (let i = 0; i < 5; i++) {
-                        let index = i;
+                        let index = i+1;
 
                         if (index < dailyData.length) {
                             let minTemp = Math.floor(dailyData[index].temp.min);
@@ -185,7 +185,7 @@ function getWeatherForDay(lat, lon) {
                     let dailyMax = data.daily;
 
                     for (let i = 0; i < 5; i++) {
-                        let index = i;
+                        let index = i+1;
 
                         if (index < dailyMax.length) {
                             let maxTemp = Math.floor(dailyMax[index].temp.max);
