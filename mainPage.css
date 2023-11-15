@@ -34,6 +34,7 @@
     overflow: hidden;
     float: left;
     width: 70%;
+    height: 50px;
 
 }
 
@@ -112,8 +113,8 @@
 .desc {
     width: 300px;
     position: absolute;
-    top: 43%;
-    left: 26%;
+    top: 83%;
+    left: 15%;
     line-height: 40px;
     font-size: 40px;
     color: var(--first-color);
@@ -285,7 +286,27 @@
     .right {
         display: none;
     }
+}
 
+@media (max-width: 600px) {
+    .city {
+        display: none;
+    }
+
+    .hourly {
+        display: none;
+    }
+
+    .mainInfo {
+        position: absolute;
+        left: 5%;
+        top: 30%;
+    }
+
+    .date {
+        position: absolute;
+        left: 77%;
+    }
 }
 
 

@@ -19,6 +19,7 @@ let api = '77442ded850fd1a075869d12438a5415';
 
 //Function for getting latitude and longitude from OpenWeatherMap with the API key
 function getCityCoords(city) {
+    //calling the API key
     return fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=&appid=${api}`)
         .then(response => {
             return response.json();
@@ -35,6 +36,7 @@ function getCityCoords(city) {
 //Function for getting every information we need for the project
 //Everything is written in one funciton to save API calls
 function getWeatherForDay(lat, lon) {
+    //calling the API key
     fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${api}`)
         .then(response => {
             return response.json();
@@ -226,7 +228,7 @@ window.onload = getCityCoords(cityWelcome)
     });
 
 //Preventing the page from reloading when pressing the "Enter" button on keyboard
-document.querySelector('form').addEventListener('submit', function(event) {
+document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
     // Your form handling code here
 });
