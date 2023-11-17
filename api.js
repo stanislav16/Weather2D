@@ -224,7 +224,7 @@ const cityWelcome = localStorage.getItem("cityWel");
 //Loading the page with the city name from the "welcome" menu
 window.onload = getCityCoords(cityWelcome)
     .then(() => {
-        getWeatherForDay(lat, lon);
+        getWeather(lat, lon);
         document.getElementById(`cityH`).innerHTML = cityWelcome;
 
     });
