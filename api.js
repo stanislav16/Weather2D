@@ -35,7 +35,7 @@ function getCityCoords(city) {
 
 //Function for getting every information we need for the project
 //Everything is written in one funciton to save API calls
-function getWeatherForDay(lat, lon) {
+function getWeather(lat, lon) {
     //calling the API key
     fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${api}`)
         .then(response => {
@@ -215,7 +215,7 @@ button.addEventListener('click', () => {
 
     getCityCoords(city)
         .then(() => {
-            getWeatherForDay(lat, lon);
+            getWeather(lat, lon);
             document.getElementById(`cityH`).innerHTML = city;
         });
 });
