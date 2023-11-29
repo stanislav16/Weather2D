@@ -21,3 +21,17 @@ document.querySelector('form').addEventListener('submit', function(event) {
     // Your form handling code here
 });
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            console.log(entry)
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    })
+})
+
+const hiddenEl = document.querySelectorAll('.hidden');
+hiddenEl.forEach((el) => observer.observe(el));
+

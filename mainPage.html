@@ -16,7 +16,7 @@
 </head>
 <body class="whole light-mode">
 <!--This is the div for the top navigation bar with the search bar, city and date-->
-<div class="topnav">
+<header class="topnav hidden">
     <div class="search-container">
         <form>
             <input type="text" placeholder="City name" name="city" id="cityBox" >
@@ -25,10 +25,10 @@
     </div>
     <div class="city" id="cityH"></div>
     <div class="date" id="date"></div>
-</div>
+</header>
 
 <!--This is the div for the div on the right side of the screen with the 5-Day - day of week, icon and lowest and highest temperatures-->
-<div class=right>
+<section class="right hidden">
     <div class="header">5-Day Forecast</div>
     <div class="dayBox" id="dayBox">
         <div class="dayLabel" id="dayLabel1"></div>
@@ -70,10 +70,10 @@
         <div class="dayMin" id="dayMin5"></div>
         <div class="dayMax" id="dayMax5"></div>
     </div>
-</div>
+</section>
 
 <!--This is the div for the main centered information on screen-->
-<div class="mainInfo">
+<main class="mainInfo hidden">
     <div>
         <div class="max" id="max">H:10</div>
         <div class="min" id="min">L:2</div>
@@ -87,10 +87,10 @@
         <div class="desc" id="desc"></div>
 
     </div>
-</div>
+</main>
 
 <!--This is the div for the hourly forecast - hours, temperatures and icons-->
-<div class="hourly">
+<footer class="hourly hidden">
     <div class="hourBox">
         <div class="hourLabel" id="hourLabel1"></div>
         <div class="hourTemp" id="hourTemp1"></div>
@@ -139,7 +139,7 @@
         <div class="hourDesc" id="hourDesc7">
             <span id="hourIcon7"></span></div>
     </div>
-</div>
+</footer>
 
 
 <script src="api.js"></script>
