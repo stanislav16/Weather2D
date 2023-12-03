@@ -49,9 +49,9 @@
     text-align: center;
     width: 100px;
     height: 100px;
-    padding: 6px;
+    font-size: 50px;
+    padding-bottom: 7px;
     background: var(--third-color);
-    font-size: 30px;
     border: none;
     cursor: pointer;
     border-radius: 20px;
