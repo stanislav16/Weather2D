@@ -35,7 +35,7 @@ function getCityCoords(city) {
 }
 
 //Function for getting every information we need for the project
-//Everything is written in one funciton to save API calls
+//Everything is written in one function to save API calls
 function getWeather(lat, lon) {
   //calling the API key
   fetch(
