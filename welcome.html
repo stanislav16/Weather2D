@@ -1,28 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather2D</title>
-    <link rel="stylesheet" href="welcome.css">
-    <link rel="stylesheet" href="fonts/">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@47,400,0,0"/>
-    <link rel="shortcut icon" type="image/x-icon" href="./icons/header_icon.ico"/>
-</head>
-<body class="whole">
+    <link rel="stylesheet" href="welcome.css" />
+    <link rel="stylesheet" href="fonts/" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@47,400,0,0"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./icons/header_icon.ico"
+    />
+  </head>
+  <body class="whole">
+    <!--This is the div for the input box and button-->
+    <main class="center hidden">
+      <form class="form">
+        <input type="text" placeholder="City name" name="city" id="cityWBox" />
+        <button
+          id="getCity"
+          type="submit"
+          onclick="location.href = 'mainPage.html';"
+        >
+          &#8594;
+        </button>
+      </form>
+    </main>
 
-<!--This is the div for the input box and button-->
-<main class="center hidden">
-    <form>
-        <input type="text" placeholder="City name" name="city" id="cityWBox">
-        <button id="getCity" type="submit" onclick="location.href = 'mainPage.html';" >&#8594;</button>
-    </form>
-</main>
-
-
-<script src="welcome.js"></script>
-</body>
+    <script src="welcome.js"></script>
+  </body>
 </html>

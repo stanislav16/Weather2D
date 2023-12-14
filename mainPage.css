@@ -352,10 +352,19 @@
     display: none;
   }
   .mainInfo {
-    left: 2%;
+    left: -2%;
   }
   .hourly {
     left: 7vw;
+  }
+}
+@media (max-width: 460px) {
+  .windIcon {
+    margin-left: -45px;
+  }
+
+  .humIcon {
+    margin-left: -45px;
   }
 }
 @media (max-width: 431px) {
@@ -363,7 +372,7 @@
     display: none;
   }
   .mainInfo {
-    left: -7%;
+    left: -10%;
   }
   .hourly {
     left: 2vw;
@@ -387,6 +396,9 @@
   .date {
     position: absolute;
     left: 70%;
+  }
+  .bigTemp {
+    font-size: 170px;
   }
 }
 @media (max-width: 376px) {
