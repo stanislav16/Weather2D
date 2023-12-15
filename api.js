@@ -67,6 +67,42 @@ function getWeather(lat, lon) {
           document.getElementById(`hourTemp${i + 1}`).innerHTML = `${temp}°`;
         }
       }
+
+      //Creating a function to check which icon should be applied to the elements
+      function getWeatherIcon(weatherDesc) {
+        if (weatherDesc.includes("rain") || weatherDesc.includes("drizzle")) {
+          return '<span class="material-symbols-outlined" style="font-size: 50px">rainy</span>';
+        } else if (weatherDesc.includes("thunderstorm")) {
+          return '<span class="material-symbols-outlined" style="font-size: 50px">thunderstorm</span>';
+        } else if (weatherDesc.includes("clear")) {
+          return '<span class="material-symbols-outlined" style="font-size: 50px">clear_day</span>';
+        } else if (
+          weatherDesc.includes("few clouds") ||
+          weatherDesc.includes("scattered clouds")
+        ) {
+          return '<span class="material-symbols-outlined" style="font-size: 50px">partly_cloudy_day</span>';
+        } else if (
+          weatherDesc.includes("broken clouds") ||
+          weatherDesc.includes("overcast clouds")
+        ) {
+          return '<span class="material-symbols-outlined" style="font-size: 50px">cloud</span>';
+        } else if (
+          weatherDesc.includes("mist") ||
+          weatherDesc.includes("smoke") ||
+          weatherDesc.includes("haze") ||
+          weatherDesc.includes("whirls") ||
+          weatherDesc.includes("fog") ||
+          weatherDesc.includes("sand") ||
+          weatherDesc.includes("dust") ||
+          weatherDesc.includes("ash") ||
+          weatherDesc.includes("squalls") ||
+          weatherDesc.includes("tornado")
+        ) {
+          return '<span class="material-symbols-outlined" style="font-size: 50px">mist</span>';
+        } else if (weatherDesc.includes("snow")) {
+          return '<span class="material-symbols-outlined" style="font-size: 50px">weather_snowy</span>';
+        }
+      }
       for (let i = 0; i < 7; i++) {
         // Calculating the index for the hourly description (every 3 hours)
         let index = i * 3;
@@ -75,47 +111,8 @@ function getWeather(lat, lon) {
         if (index < hourlyData.length) {
           // Getting the description
           let desc = hourlyData[index].weather[0].description;
-          //Making ifs to check which words are included in the description and matching them with icons
-          //After checking, we add the icons to spans
-          if (desc.includes("rain") || desc.includes("drizzle")) {
-            document.getElementById(`hourIcon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">rainy</span>';
-          } else if (desc.includes("thunderstorm")) {
-            document.getElementById(`hourIcon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">thunderstorm</span>';
-          } else if (desc.includes("clear")) {
-            document.getElementById(`hourIcon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">clear_day</span>';
-          } else if (
-            desc.includes("few clouds") ||
-            desc.includes("scattered clouds")
-          ) {
-            document.getElementById(`hourIcon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">partly_cloudy_day</span>';
-          } else if (
-            desc.includes("broken clouds") ||
-            desc.includes("overcast clouds")
-          ) {
-            document.getElementById(`hourIcon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">cloud</span>';
-          } else if (
-            desc.includes("mist") ||
-            desc.includes("smoke") ||
-            desc.includes("haze") ||
-            desc.includes("whirls") ||
-            desc.includes("fog") ||
-            desc.includes("sand") ||
-            desc.includes("dust") ||
-            desc.includes("ash") ||
-            desc.includes("squalls") ||
-            desc.includes("tornado")
-          ) {
-            document.getElementById(`hourIcon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">mist</span>';
-          } else if (desc.includes("snow")) {
-            document.getElementById(`hourIcon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">weather_snowy</span>';
-          }
+          let hourlyIcon = getWeatherIcon(desc);
+          document.getElementById(`hourIcon${i + 1}`).innerHTML = hourlyIcon;
         }
       }
       for (let i = 0; i < 7; i++) {
@@ -174,47 +171,9 @@ function getWeather(lat, lon) {
 
         if (index < dailyData.length) {
           let desc = dailyData[index].weather[0].description;
-          //Making ifs to check which words are included in the description and matching them with icons
-          //After checking, we add the icons to spans
-          if (desc.includes("rain") || desc.includes("drizzle")) {
-            document.getElementById(`icon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">rainy</span>';
-          } else if (desc.includes("thunderstorm")) {
-            document.getElementById(`icon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">thunderstorm</span>';
-          } else if (desc.includes("clear")) {
-            document.getElementById(`icon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">clear_day</span>';
-          } else if (
-            desc.includes("few clouds") ||
-            desc.includes("scattered clouds")
-          ) {
-            document.getElementById(`icon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">partly_cloudy_day</span>';
-          } else if (
-            desc.includes("broken clouds") ||
-            desc.includes("overcast clouds")
-          ) {
-            document.getElementById(`icon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">cloud</span>';
-          } else if (
-            desc.includes("mist") ||
-            desc.includes("smoke") ||
-            desc.includes("haze") ||
-            desc.includes("whirls") ||
-            desc.includes("fog") ||
-            desc.includes("sand") ||
-            desc.includes("dust") ||
-            desc.includes("ash") ||
-            desc.includes("squalls") ||
-            desc.includes("tornado")
-          ) {
-            document.getElementById(`icon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">mist</span>';
-          } else if (desc.includes("snow")) {
-            document.getElementById(`icon${i + 1}`).innerHTML =
-              '<span class="material-symbols-outlined" style="font-size: 50px">weather_snowy</span>';
-          }
+
+          let icon = getWeatherIcon(desc);
+          document.getElementById(`icon${i + 1}`).innerHTML = icon;
 
           for (let i = 0; i < 5; i++) {
             let index = i + 1;
